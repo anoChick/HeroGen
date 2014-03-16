@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+    script(src='http://code.jquery.com/jquery-1.11.0.min.js')
+    script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+  body 
+    div(class='update container')
+      h2
+        |アップデート履歴
+      -for(var i=version.length-1;i>=0;i--)
+        section
+          h3
+            =version[i][0]
+            small
+              =version[i][2]
+          -for(var j=0;j<version[i][1].length;j++)
+            p
+              =version[i][1][j]
+      a(href='/' style='text-align:right;')
+        |トップ
+      div(class='banner')
+        script(type="text/javascript").
+          google_ad_client = "ca-pub-8722050541044002";
+          /* hgen */
+          google_ad_slot = "2897427374";
+          google_ad_width = 728;
+          google_ad_height = 90;
+        script(type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js")
+
+
+    
+    

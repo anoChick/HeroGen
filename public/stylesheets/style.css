@@ -1,0 +1,349 @@
+
+body {
+font-size: 14px;
+background-image: url('../images/bg.png');
+text-align:center;
+font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+p.chickvalue{
+margin:0;
+font-size: 18px;
+}
+a {
+color: #00B7FF;
+}
+.ticketwrap{
+position:relative;
+float:left;
+width:300px;
+padding:4px;
+}
+.ticketwrap span{
+left:0;
+color:#fff;
+float:left;
+}
+#ticket{
+width:128px;
+border-radius:0;
+}
+div.maincontent{
+margin:4px;
+}
+div.progress{
+  position:relative;
+}
+.ticketwrap .progress span{ 
+
+text-shadow: 0 -1px 0px rgba(255,255,255,0.8), -1px 0 0px rgba(255,255,255,0.8), 1px 0 0px rgba(255,255,255,0.8),0 1px 0px rgba(255,255,255,0.8);  
+font-weight: bolder;
+text-align: center;
+position:absolute;
+left:50%;
+margin-left:-8px;
+
+color:#428bca;
+color: #333\9; /* IE9 */
+}
+.ticketwrap .progress-bar span{
+color:#fff;
+}
+#attackButton{
+position:absolute;
+text-align:center;
+padding:0;
+left:50%;
+height:30px;
+margin-left:-48px;
+width:96px;
+}
+div.main-container{
+border:1px solid #333;
+border-top-width: 0;
+margin: 0 auto;
+width:716px;
+height:440px;
+background-color: #f3f3f3;
+}
+.lefter{
+float:left;
+}
+.righter{
+float:left;
+}
+.topNav{
+background-color: #333;
+width:100%;
+height:30px;
+overflow: hidden;
+}
+.hValue{
+float:left;
+height:22px;
+background-color: #fff;
+border:1px solid #222;
+margin:1px 1px 0 0;
+text-align: center;
+}
+.hLabel{
+float:left;
+height:22px;
+background-color: #333;
+color:#fff;
+border:1px solid #222;
+margin:1px 1px 0 0;
+text-align: center;
+}
+.hButton{
+float:left;
+}
+.btn.btn-default.sidebtn{
+float:right;
+font-size:10px;
+margin:1px;
+color:#fff;
+border-color:#999;
+background-color: #333;
+}
+.hLine{
+margin:1px 1;
+height:24px;
+}
+.prof .hLabel{
+width:52px;
+}
+.prof .hValue{
+width:149px;
+}
+.equip{
+  margin:4px;
+}
+.equip .hLabel{
+width:96px;
+}
+.equip .hValue{
+width:280px;
+}
+.status{
+  margin:4px;
+}
+.status .hLabel{
+width:96px;
+}
+.status .hValue{
+width:140px;
+}
+.parameter .hLabel{
+width:54px;
+}
+.parameter .hValue{
+width:114px;
+}
+
+#messageLog{
+  float:left;
+  margin:4px;
+position: relative;
+border:1px solid #222;
+background-color: #fff;
+width:272px;
+height:168px;
+overflow-y:scroll;
+padding:8px;
+overflow-x:hidden;
+}
+
+
+.messageLine{
+word-break:keep-all;
+position: relative;
+width:100%;
+border-bottom:1px solid #666;
+}
+.messageLine p{
+margin:2px;
+}
+.itemView{
+float:none;
+margin:4px;
+width:239px;
+
+font-size: 12px;
+padding:4px;
+height:140px;
+border:1px solid #666;
+background-color: #fff;
+}
+
+.itemView .itemTitle{
+height:20px;
+width:177px;
+border-bottom:1px solid #666;
+padding:4px;
+margin:0 4px 0 0;
+
+}
+.itemView .itemName{
+height:20px;
+width:177px;
+border-bottom:1px solid #666;
+margin:0 4px 0 0;
+padding:4px;
+}
+.weapontype{
+font-weight: bolder;
+}
+.itemView .itemDetail{
+width:228px;
+height:90px;
+margin:4px 0;
+}
+.itemView .itemUpgrade{
+width:48px;
+height:38px;
+
+padding-top:6px;
+text-align: center;
+font-size: 18px;
+border:1px solid #666;
+
+background-color: #555;
+color:#fff;
+}
+.itemView p{
+margin:-2px;
+padding:0;
+}
+.itemView .itemLeft{
+overflow-y:scroll;
+float:left;
+padding:4px;
+height:92px;
+width:114px;
+}
+.itemView .itemRight{
+overflow-y:scroll;
+float:left;
+border-left:1px solid #666;
+padding:4px;
+width:114px;
+height:92px;
+}
+
+#loadLayer{
+position: absolute;
+top:0;
+left:0;
+z-index: 10;
+width:100%;
+height:100%;
+background-color:rgba(0,0,0,0.8);
+}
+#loadLayer span{
+color:#ddd;
+text-align: center;
+font-size: 72px;
+position: absolute;
+width:500px;
+left:50%;
+top:50%;
+width:500px;
+margin-left:-250px;
+height:100px;
+margin-top:-50px;
+}
+.btn:focus {
+outline: none;
+}
+button.btn{
+
+border-radius: 0;
+}
+button.btn.btn-xs{
+margin:1px 0;
+}
+a.btn{
+border-radius: 0;
+}
+button.btn:focus{
+outline:none;
+}
+a.btn:focus{
+outline:none;
+}
+
+.parameter{
+  margin:4px;
+}
+.prof{
+  margin:4px;
+}
+.banner{
+margin:0 auto;
+text-align:center;
+margin-top:4px;
+
+}
+
+div.rank-board div.panel{
+  border-radius:0;
+  border: 1px solid #000;
+}
+div.rank-board div.panel div.panel-heading{
+  padding:2px;
+  font-size:18px;
+  border-radius:0;
+  background-color:#333;
+}
+div.rank-board div.panel div.panel-heading span{
+  color:#fff;
+}
+div.rank-board div.panel div.panel-heading a{
+  color:#6af;
+}
+div.rank-board div.panel div.panel-body{
+  border-radius:0;
+  background-color:#fff;
+}
+
+div.version{
+  height:24px;
+margin-left:640px;
+}
+span.st-up{
+color:#00c;
+}
+span.st-down{
+  color:#c00;
+}
+
+div.update.container{
+  margin-top:64px;
+  background-color: #fff;
+  border:1px solid #aaa;
+  padding:0px;
+  text-align: left;
+}
+div.update.container section{
+  margin:16px;
+}
+div.update.container h2{
+  margin:16px;
+}
+
+
+.rare1{
+color:#444;
+}
+.rare2{
+color:#090;
+}
+.rare3{
+color:#26f;
+}
+.rare4{
+
+}
+.rare5{
+
+}

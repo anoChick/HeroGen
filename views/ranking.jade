@@ -1,0 +1,48 @@
+doctype html
+-var prevF=(page>0) ?true:false;
+-var nextF=( (data.length<(1+page)*10)||page==9) ? false:true;
+html
+  head
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+    script(src='http://code.jquery.com/jquery-1.11.0.min.js')
+    script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+  body 
+    div(class='rank-board container')
+      h2
+        |討伐数ランキング
+        =test
+
+      -for(var i=0+(page*10);i<10+(page*10);i++)
+        -if(data.length<=i)break;
+        div(class='panel panel-default')
+            div(class='panel-heading') 
+              span
+                =(i+1)+"位:"
+              a(href='/view?heroID='+data[i].HeroID)
+                =data[i].Name
+            div(class='panel-body')
+              p(class='chickvalue')
+                =data[i].Chick+'匹'
+      div(class='pager')
+        li(class='' +( (prevF) ? "" : "disabled")) 
+          a(href=( (prevF) ? "ranking?page="+(page-1) : ""))
+            |&larr; 前
+        li(class='') 
+          a(href='/')
+            |トップ
+        li(class='' + ((nextF) ? "" : "disabled") )
+          a(href=( (nextF) ? "ranking?page="+(page+1) : ""))
+            |次 &rarr;
+      div(class='banner')
+        script(type="text/javascript").
+          google_ad_client = "ca-pub-8722050541044002";
+          /* hgen */
+          google_ad_slot = "2897427374";
+          google_ad_width = 728;
+          google_ad_height = 90;
+        script(type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js")
+
+
+    
+    

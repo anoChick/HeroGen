@@ -1,0 +1,28 @@
+{
+  "name": "anoChickHeroGenerator",
+  "version": "0.2.0",
+  "author": "Anoni <anoinchick@gmail.com>",
+  "description": "PiyoPiyo",
+  "contributors": [
+    {
+      "name": "Anoni",
+      "email": "anoinchick@gmail.com"
+    }
+  ],
+  "main": "./server.js",
+  "keywords": [
+    "WebApp",
+    "Game",
+    "anoChick"
+  ],
+  "dependencies": {
+    "jade": "*",
+    "express": "~3.1.0",
+    "express-resource":"*"
+  },
+  "noAnalyze": true,
+  "license": "Apache",
+  "engines": {
+    "node": ">=0.6.14"
+  }
+}

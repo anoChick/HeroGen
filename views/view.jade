@@ -1,0 +1,73 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+    script(src='http://code.jquery.com/jquery-1.11.0.min.js')
+    script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+    script(src='/javascripts/view.js')
+  body
+    div(class='main-container ')
+      div(class='topNav')
+        a(class='btn btn-default sidebtn' type='button' href='/')
+          |トップ
+        a(class='btn btn-default sidebtn' type='button' href='/ranking')
+          |ランキング
+      div(class='maincontent')
+        div(class='upper ')
+          div(class='lefter ')
+            div(class='upper')
+              div(class='prof')
+                -var profLabel=['称号','クラス','名前'];
+                -var profId=['title','class','name'];
+                -for(var p=0;p<profLabel.length;p++)
+                  div(class='hLine ' )
+                    div(class='hLabel stat')=profLabel[p]
+                    div(class=' hValue stat' id=profId[p]+'P') 
+            div(class='downer')
+              div(class='itemView')
+                div(class='upper')
+                  div(class='lefter')
+                    div(class='itemTitle') 
+                    div(class='itemName') 
+                  div(class='itemUpgrade righter') 
+                div(class='downer itemDetail')
+                  div(class='itemLeft')
+                  div(class='itemRight')
+          div(class='righter')
+            div(class='equip  ')
+              -var partName=['頭','腕','右手','左手','体','靴','アクセサリ１','アクセサリ２','アクセサリ３'];
+              -var itemType=['head','arm','rHand','lHand','body','shoe','acce1','acce2','acce3'];
+              -for(var p=0;p<partName.length;p++)
+                div(class='hLine   line' part=itemType[p])
+                  div(class='hLabel ')=partName[p]
+                  div(class='hValue' id=itemType[p]+'P') 
+        div(class='downer ')
+          div(class='lefter ')
+            div(class='lefter semichild  ')
+              div(class='parameter')
+                -var paramLabel=['STR','VIT','AGI','DEX','INT','MEN'];
+                -var paramLabel2=['str','vit','agi','dex','int','men'];
+                -for(var p=0;p<paramLabel.length;p++)
+                  div(class='hLine  ')
+                    div(class='hLabel param')=paramLabel[p]
+                    div(class=' hValue param ' id=paramLabel2[p]+"P") 
+            div(class='righter semichild  ')
+              div(class='status  ')
+                -var paramLabel=['HP','MP','攻撃力','防御力','攻撃速度','回避','クリティカル'];
+                -var paramLabel2=['hp','mp','atk','def','spd','avo','cri'];
+                -for(var p=0;p<paramLabel.length;p++)
+                  div(class='hLine ')
+                    div(class='hLabel')=paramLabel[p]
+                    div(class='hValue' id=paramLabel2[p]+"P") 
+          div(class='righter semichild')
+            div(id='messageLog')
+    div(class='banner')
+      script(type="text/javascript").
+        google_ad_client = "ca-pub-8722050541044002";
+        /* hgen */
+        google_ad_slot = "2897427374";
+        google_ad_width = 728;
+        google_ad_height = 90;
+      script(type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js")
