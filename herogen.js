@@ -166,7 +166,7 @@ module.exports = function() {
 
       if (Math.random() <= 0.05) {
         rare = 3;
-      } else if (Math.random() <= 0.015) {
+      } else if (Math.random() <= 0.15) {
         rare = 2;
       } else if (Math.random() <= 0.5) {
         rare = 1;
@@ -180,7 +180,7 @@ module.exports = function() {
 
       if (Math.random() <= 0.05) {
         rare = 3;
-      } else if (Math.random() <= 0.015) {
+      } else if (Math.random() <= 0.15) {
         rare = 2;
       } else if (Math.random() <= 0.4) {
         rare = 1;

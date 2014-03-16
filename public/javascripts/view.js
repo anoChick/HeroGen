@@ -13,7 +13,23 @@ $(function() {
     setData: function(data) {
       this.data = data;
       for (var key in data) {
-        $('#' + key + 'P').html((data[key] || {}).str || (data[key] || {}).val);
+        $('#' + key + 'P').html('');
+        if (data[key].item) {
+          $('#' + key + 'P').append($('<span>', {
+            class: 'rare' + data[key].title1.param.rare
+          }).html(data[key].title1.str));
+          $('#' + key + 'P').append($('<span>', {
+            class: 'rare' + data[key].title2.param.rare
+          }).html(data[key].title2.str));
+          $('#' + key + 'P').append($('<span>', {
+            class: 'rare' + data[key].item.param.rare
+          }).html(data[key].item.str));
+          $('#' + key + 'P').append($('<span>', {
+            class: 'rare' + (1 + Math.floor(data[key].upgradeStr / 20))
+          }).html(data[key].upgradeStr));
+        } else {
+          $('#' + key + 'P').html((data[key] || {}).str || (data[key] || {}).val);
+        }
       }
       for (var key in data.param.z) {
         $('#' + key + 'P').html(data.param.z[key]);
@@ -28,9 +44,15 @@ $(function() {
     return function() {
       var part = $(this).attr('part');
       iData = hero.data[part];
-      $('.itemUpgrade').html(iData.upgradeStr);
-      $('.itemName').html(iData.item.str);
-      $('.itemTitle').html(iData.title1.str + " " + iData.title2.str);
+        $('.itemUpgrade').html($('<span>', {
+          class: 'rare' + (1+Math.floor(iData.upgradeVal/20))
+        }).html(iData.upgradeStr));
+        $('.itemName').html($('<span>', {
+          class: 'rare' + iData.item.param.rare
+        }).html(iData.item.str));
+        $('.itemTitle').html('');
+        $('.itemTitle').append($('<span>',{class:'rare'+iData.title1.param.rare}).html(iData.title1.str));
+        $('.itemTitle').append($('<span>',{class:'rare'+iData.title2.param.rare}).html(iData.title2.str));
       $('.itemLeft').html('');
       $('.itemRight').html('');
       if (part == 'lHand' || part == 'rHand') {
