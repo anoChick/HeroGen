@@ -284,8 +284,8 @@ module.exports = function() {
         var itemP = itemData.item.param[key].split(',');
         var title1P = itemData.title1.param[key].split(',');
         var title2P = itemData.title2.param[key].split(',');
-        param.a[key] = (+itemP[0] + (+title1P[0]) + (+title2P[0])) * (1 + (Math.pow(itemData.upgradeVal, 2.5) / 1000));
-        param.c[key] = (+itemP[1] + (+title1P[1]) + (+title2P[1])) * (1 + (itemData.upgradeVal / 100));
+        param.a[key] = (+itemP[0] + (+title1P[0]) + (+title2P[0])) * (1 + (Math.pow(itemData.upgradeVal, 2.5+( ((itemData.upgradeVal>=80) ? (itemData.upgradeVal-79) : 0)/50  )) / 1000));
+        param.c[key] = (+itemP[1] + (+title1P[1]) + (+title2P[1])) * (1 + ( Math.pow(itemData.upgradeVal,1+(((itemData.upgradeVal>=80) ? (itemData.upgradeVal-79) : 0)/100)) / 100));
         //param.a[key]=((itemData.item.param[key]||0)+(itemData.title1.param[key]||0)+(itemData.title2.param[key]||0))*(itemData.upgradeVal||0)*0.05;
       }
       itemData.param = param;

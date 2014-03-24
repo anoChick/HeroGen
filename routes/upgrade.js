@@ -6,24 +6,41 @@ var columnKey = ['key', 'name', 'title', 'class', 'head', 'body', 'arm', 'shoe',
 var columnType = ['', 'str', 'int', 'int', 'int', 'int', 'int', 'int', 'int', 'int', 'int', 'int', 'int', 'str', 'str', 'int', 'int', 'int'];
 var itemType = ['head', 'arm', 'rHand', 'lHand', 'body', 'shoe', 'acce', 'acce', 'acce'];
 
-var UPGRADE_MESSAGE = ['大失敗・・・(強化値-2)', '失敗。(強化値-1)', '失敗。(強化値±0)', '成功！(強化値+1)', '大成功！(強化値+2)'];
-var UPGRADE_COLOR = ['#A00', '#E00', '#548', '#2b2', '#dc0'];
+var UPGRADE_MESSAGE = ['大失敗・・・(強化値-2)', '失敗。(強化値-1)', '失敗。(強化値±0)', '成功！(強化値+1)', '大成功！(強化値+2)','これ以上強化できない。'];
+var UPGRADE_COLOR = ['#c00', '#E00', '#548', '#2b2', '#16f','#333'];
 var upgrade = function(value) {
   var result = {}
+  if(+value==99){
+    result.plus=0;
+    result.message=UPGRADE_MESSAGE[5];
+    result.color=UPGRADE_COLOR[5];
+  }
   var rand = Math.random();
 
   if (rand > (0.5) + Math.floor(value / 20) * 0.1) {
-    result.plus = 1;
-    result.message = UPGRADE_MESSAGE[3];
-    result.color = UPGRADE_COLOR[3];
+    if(Math.random()>0.3){ 
+      result.plus = 1;
+      result.message = UPGRADE_MESSAGE[3];
+      result.color = UPGRADE_COLOR[3];
+    }else{
+      result.plus = 2;
+      result.message = UPGRADE_MESSAGE[4];
+      result.color = UPGRADE_COLOR[4]; 
+    }
   } else if (rand > 0.15) {
     result.plus = 0
     result.message = UPGRADE_MESSAGE[2];
     result.color = UPGRADE_COLOR[2];
   } else {
-    result.plus = -1
-    result.message = UPGRADE_MESSAGE[1];
-    result.color = UPGRADE_COLOR[1];
+    if(Math.random()>0.3){ 
+      result.plus = -1
+      result.message = UPGRADE_MESSAGE[1];
+      result.color = UPGRADE_COLOR[1];
+    }else{
+      result.plus = -2
+      result.message = UPGRADE_MESSAGE[0];
+      result.color = UPGRADE_COLOR[0];
+    }
   }
   result.value = value + result.plus;
   if (result.value >= 100) result.value = 99;

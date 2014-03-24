@@ -207,7 +207,7 @@ text-align: center;
 font-size: 18px;
 border:1px solid #666;
 
-background-color: #555;
+background-color: #eee;
 color:#fff;
 }
 .itemView p{
@@ -342,8 +342,9 @@ color:#090;
 color:#26f;
 }
 .rare4{
-
+color:#FF8C00;
 }
 .rare5{
-
+font-weight: bold;
+color:#9932CC;
 }
